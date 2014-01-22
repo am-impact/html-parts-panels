@@ -28,7 +28,7 @@
 }
 
 %panel--block {
-    padding: 20px;
+    padding: $column-gutter / 2;
     border: {
         radius: $global-radius;
         style: solid;

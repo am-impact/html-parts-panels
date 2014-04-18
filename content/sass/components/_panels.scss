@@ -1,24 +1,5 @@
-/*------------------------------------*\
-    PANELS
-\*------------------------------------*/
-/**
- * Panels tonen
- *
- *
-    <div class="panel">
-        Kale panel met alleen margins
-    </div>
-    <div class="panel--block">
-        Block panel
-    </div>
-    <div class="panel--callout">
-        Opvallend panel
-    </div>
- *
- */
-
 //
-// Silend classes
+// Silent classes
 //
 %panel {
     margin: $column-gutter 0;
@@ -30,7 +11,7 @@
 %panel--block {
     padding: $column-gutter / 2;
     border: {
-        radius: $global-radius;
+        radius: size(global,radius);
         style: solid;
         width: 1px;
     }
@@ -41,18 +22,17 @@
 //
 .panel {
     @extend %panel;
-}
 
-// Block panels
-.panel--block {
-    @extend %panel;
-    @extend %panel--block;
-    border-color: $base-ui-color;
-}
+    &--block {
+        @extend %panel;
+        @extend %panel--block;
+        border-color: color(ui);
+    }
 
-.panel--callout {
-    @extend %panel;
-    @extend %panel--block;
-    border-color: $primary-color;
-    background: $primary-color;
+    &--callout {
+        @extend %panel;
+        @extend %panel--block;
+        border-color: color(primary);
+        background: color(primary);
+    }
 }
